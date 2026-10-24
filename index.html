@@ -3,1059 +3,889 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al-Safwan Online Academy | Quran & Science Tutoring</title>
-    
-    <!-- Tailwind CSS CDN -->
+    <title>Al-Safwan Online Quran & STEM Academy | Hafiz Muhammad Safwan</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        teal: {
-                            850: '#0B3C3F',
-                            950: '#072729',
+                        emerald: {
+                            850: '#044d42',
+                            950: '#022e28',
                         },
                         gold: {
-                            400: '#F3C649',
-                            500: '#D4AF37',
-                            600: '#AA8825',
+                            400: '#f3e5ab',
+                            500: '#d4af37',
+                            600: '#b89228',
+                        },
+                        sand: {
+                            50: '#faf8f5',
+                            100: '#f4efe6',
+                            200: '#e8dec9',
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        quran: ['Amiri', 'serif'],
                     }
                 }
             }
         }
     </script>
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Amiri:wght@700&display=swap" rel="stylesheet">
-
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        .arabic-bg-pattern {
+            background-color: #022e28;
+            background-image: radial-gradient(#d4af37 0.75px, transparent 0.75px), radial-gradient(#d4af37 0.75px, #022e28 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.95;
         }
-        .arabic-font {
-            font-family: 'Amiri', serif;
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa820a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+        }
+        .glass-card-dark {
+            background: rgba(2, 46, 40, 0.85);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
         }
-        .pulse-gold {
-            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
-            animation: pulse-gold 2s infinite;
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
-        @keyframes pulse-gold {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
-            70% { box-shadow: 0 0 0 14px rgba(212, 175, 55, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        ::-webkit-scrollbar-track {
+            background: #022e28;
         }
-        .pulse-wa {
-            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-            animation: pulse-wa 2s infinite;
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 5px;
         }
-        @keyframes pulse-wa {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { box-shadow: 0 0 0 16px rgba(34, 197, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f3e5ab;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+<body class="font-sans bg-sand-50 text-slate-800 antialiased selection:bg-gold-500 selection:text-white">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-gradient-to-r from-teal-950 via-teal-900 to-teal-950 text-gold-400 text-xs py-2 px-4 text-center border-b border-gold-500/20 font-medium flex justify-between items-center max-w-full">
-        <div class="hidden sm:block text-slate-300">
-            <i class="fa-solid fa-globe text-gold-400 mr-1.5"></i> Teaching Students Across USA, UK, Canada, Australia & Gulf
-        </div>
-        <div class="mx-auto sm:mx-0 flex items-center gap-4">
-            <span><i class="fa-solid fa-gift text-gold-400 mr-1"></i> Special Offer: <strong>Free 3-Day Live Trial Class</strong></span>
-            <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20want%20to%20claim%20the%20Free%203-Day%20Trial." target="_blank" class="underline hover:text-white font-bold">Claim Now</a>
-        </div>
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-emerald-950 text-sand-100 text-xs sm:text-sm py-2 px-4 border-b border-gold-500/20 text-center flex items-center justify-center gap-2">
+        <span class="inline-block px-2 py-0.5 rounded-full bg-gold-500/20 text-gold-400 font-semibold text-xs border border-gold-500/40 animate-pulse">20% Sibling Discount</span>
+        <span>Register now for international online Tajweed & Hifz classes with 3-Day Free Trial!</span>
     </div>
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 bg-teal-950/95 backdrop-blur-md text-white border-b border-teal-850 shadow-lg">
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-40 bg-emerald-850/95 backdrop-blur-md border-b border-gold-500/30 text-white shadow-xl transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                
-                <!-- Logo / Academy Name -->
+                <!-- Logo -->
                 <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-teal-950 font-black text-xl shadow-md transform group-hover:scale-105 transition">
-                        <i class="fa-solid fa-book-quran"></i>
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform border border-gold-400/50">
+                        <i class="fa-solid fa-kaaba text-emerald-950 text-2xl"></i>
                     </div>
                     <div>
-                        <div class="text-lg font-black tracking-tight text-white group-hover:text-gold-400 transition">Al-Safwan Academy</div>
-                        <div class="text-[10px] text-gold-400 tracking-wider font-semibold uppercase">Hafiz Safwan • Quran & STEM Tutor</div>
+                        <span class="block font-extrabold text-lg sm:text-xl tracking-tight text-white group-hover:text-gold-400 transition-colors">AL-SAFWAN</span>
+                        <span class="block text-xs font-medium text-gold-400 tracking-wider uppercase">Online Quran & STEM Academy</span>
                     </div>
                 </a>
 
                 <!-- Desktop Nav Links -->
-                <nav class="hidden lg:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider">
-                    <a href="#about" class="text-slate-200 hover:text-gold-400 transition-colors">About Me</a>
-                    <a href="#branding" class="text-slate-200 hover:text-gold-400 transition-colors">Academy Name</a>
-                    <a href="#services" class="text-slate-200 hover:text-gold-400 transition-colors">Courses</a>
-                    <a href="#pricing" class="text-slate-200 hover:text-gold-400 transition-colors">Pricing Plans</a>
-                    <a href="#why-me" class="text-slate-200 hover:text-gold-400 transition-colors">Why Choose Me</a>
-                    <a href="#contact" class="text-slate-200 hover:text-gold-400 transition-colors">Contact</a>
-                </nav>
-
-                <!-- Action CTAs -->
-                <div class="hidden sm:flex items-center gap-3">
-                    <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20would%20like%20to%20inquire%20about%20online%20classes." target="_blank" 
-                       class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-2 transition shadow-md">
-                        <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
-                    </a>
-                    <a href="#contact" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-teal-950 font-extrabold text-xs shadow-md transition">
-                        Book Free Trial
-                    </a>
+                <div class="hidden lg:flex items-center space-x-8 font-medium text-sm text-sand-100">
+                    <a href="#home" class="hover:text-gold-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-gold-400 transition-colors">About Educator</a>
+                    <a href="#tilawat" class="hover:text-gold-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-circle-play text-xs text-gold-400"></i> Tilawat Videos</a>
+                    <a href="#services" class="hover:text-gold-400 transition-colors">Courses & Pedagogy</a>
+                    <a href="#pricing" class="hover:text-gold-400 transition-colors">Packages</a>
+                    <a href="#academies" class="hover:text-gold-400 transition-colors">Academy Profiles</a>
                 </div>
 
-                <!-- Mobile Hamburger Button -->
-                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white focus:outline-none">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Drawer Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-teal-950 border-t border-teal-850 px-4 pt-4 pb-6 space-y-3">
-            <a href="#about" class="block text-slate-200 hover:text-gold-400 py-2 font-medium">About Me</a>
-            <a href="#branding" class="block text-slate-200 hover:text-gold-400 py-2 font-medium">Academy Name Suggestion</a>
-            <a href="#services" class="block text-slate-200 hover:text-gold-400 py-2 font-medium">Courses & Services</a>
-            <a href="#pricing" class="block text-slate-200 hover:text-gold-400 py-2 font-medium">Pricing & Plans</a>
-            <a href="#why-me" class="block text-slate-200 hover:text-gold-400 py-2 font-medium">Why Choose Hafiz Safwan</a>
-            <a href="#contact" class="block text-slate-200 hover:text-gold-400 py-2 font-medium">Contact & Booking</a>
-            <div class="pt-4 flex flex-col gap-2">
-                <a href="https://wa.me/923093214855" target="_blank" class="w-full text-center py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp (+92 309 3214855)
-                </a>
-                <a href="#contact" class="w-full text-center py-3 rounded-xl bg-gold-500 text-teal-950 font-extrabold text-xs">
-                    Book Free 3-Day Trial
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <main class="flex-grow">
-        
-        <!-- HERO SECTION -->
-        <section class="relative bg-gradient-to-b from-teal-950 via-teal-900 to-slate-900 text-white py-16 sm:py-24 overflow-hidden">
-            <!-- Decorative Subtle Pattern -->
-            <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
-            
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Hero Content Left -->
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-850/90 border border-gold-500/30 text-gold-400 text-xs font-semibold">
-                            <i class="fa-solid fa-award"></i> 10+ Years Dedicated Teaching Experience (Since 2015)
-                        </div>
-
-                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white">
-                            Master <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-amber-300 to-gold-500">Tajweed, Hifz & Science</span> With Structured Online Guidance
-                        </h1>
-
-                        <p class="arabic-font text-gold-400 text-xl sm:text-2xl py-1">
-                            بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ • «خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ»
-                        </p>
-
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                            Assalamu Alaikum! I am <strong>Hafiz Muhammad Safwan</strong>. Combining 10+ years of Quranic instruction with a academic background in <strong>Master's Chemistry</strong> and <strong>BS Data Science Engineering</strong>, I deliver clear, interactive, and analytical 1-on-1 online classes tailored for international students & kids.
-                        </p>
-
-                        <!-- Key Quick Highlights -->
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 max-w-lg mx-auto lg:mx-0 text-xs font-medium text-slate-200">
-                            <div class="p-2.5 rounded-xl bg-teal-850/60 border border-teal-700/50 flex items-center gap-2">
-                                <i class="fa-solid fa-check-circle text-gold-400"></i>
-                                <span>1-on-1 Zoom/Skype</span>
-                            </div>
-                            <div class="p-2.5 rounded-xl bg-teal-850/60 border border-teal-700/50 flex items-center gap-2">
-                                <i class="fa-solid fa-check-circle text-gold-400"></i>
-                                <span>US / UK / Gulf Hours</span>
-                            </div>
-                            <div class="p-2.5 rounded-xl bg-teal-850/60 border border-teal-700/50 flex items-center gap-2 col-span-2 sm:col-span-1">
-                                <i class="fa-solid fa-check-circle text-gold-400"></i>
-                                <span>Kids & Adult Classes</span>
-                            </div>
-                        </div>
-
-                        <!-- Hero CTAs -->
-                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                            <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20am%20interested%20in%20a%20Free%20Trial%20Quran/Science%20class." 
-                               target="_blank" 
-                               class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-sm shadow-xl flex items-center justify-center gap-3 transition transform hover:-translate-y-0.5 pulse-wa">
-                                <i class="fa-brands fa-whatsapp text-xl"></i> Chat Directly on WhatsApp
-                            </a>
-                            <a href="#pricing" 
-                               class="w-full sm:w-auto px-8 py-4 rounded-xl bg-teal-850 hover:bg-teal-800 text-gold-400 border border-gold-500/40 font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition">
-                                <i class="fa-solid fa-tags"></i> View Tuition Packages
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <!-- Hero Card Right (Tutor Profile Summary) -->
-                    <div class="lg:col-span-5">
-                        <div class="glass-card rounded-3xl p-6 sm:p-8 text-white shadow-2xl relative border border-gold-500/30">
-                            <div class="absolute -top-3 -right-3 bg-gradient-to-r from-gold-500 to-amber-600 text-teal-950 font-black text-[11px] uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md">
-                                Certified & Verified
-                            </div>
-
-                            <div class="flex items-center gap-4 mb-6">
-                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 text-teal-950 flex items-center justify-center text-2xl font-black shadow-inner">
-                                    HMS
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-extrabold text-white">Hafiz Muhammad Safwan</h3>
-                                    <p class="text-xs text-gold-400 font-semibold">Lead Online Instructor & Founder</p>
-                                    <p class="text-[11px] text-slate-300">Teaching Overseas Students Since 2015</p>
-                                </div>
-                            </div>
-
-                            <div class="space-y-3 border-t border-slate-700/60 pt-5 text-xs">
-                                <div class="flex items-start gap-3">
-                                    <i class="fa-solid fa-graduation-cap text-gold-400 mt-1"></i>
-                                    <div>
-                                        <strong class="text-slate-100 block">Academic Qualification:</strong>
-                                        <span class="text-slate-300">Master's in Chemistry & BS Data Science Engineer</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i class="fa-solid fa-book-open text-gold-400 mt-1"></i>
-                                    <div>
-                                        <strong class="text-slate-100 block">Quranic Credentials:</strong>
-                                        <span class="text-slate-300">Certified Hafiz-e-Quran with Tajweed Certification</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i class="fa-solid fa-language text-gold-400 mt-1"></i>
-                                    <div>
-                                        <strong class="text-slate-100 block">Languages Spoken:</strong>
-                                        <span class="text-slate-300">English (Fluent), Urdu (Native), Arabic (Quranic)</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Social Badges Row -->
-                            <div class="mt-6 pt-5 border-t border-slate-700/60">
-                                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-2 tracking-wider">Connect on Official Social Handles:</span>
-                                <div class="flex items-center gap-3">
-                                    <a href="https://www.facebook.com/saffwan64" target="_blank" class="w-9 h-9 rounded-xl bg-blue-600/30 hover:bg-blue-600 border border-blue-500/40 flex items-center justify-center text-white transition text-sm">
-                                        <i class="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a href="https://www.instagram.com/m_safwan_64" target="_blank" class="w-9 h-9 rounded-xl bg-pink-600/30 hover:bg-pink-600 border border-pink-500/40 flex items-center justify-center text-white transition text-sm">
-                                        <i class="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a href="https://www.tiktok.com/@hmsaffwan64" target="_blank" class="w-9 h-9 rounded-xl bg-slate-700 hover:bg-black border border-slate-500/40 flex items-center justify-center text-white transition text-sm">
-                                        <i class="fa-brands fa-tiktok"></i>
-                                    </a>
-                                    <a href="https://wa.me/923093214855" target="_blank" class="w-9 h-9 rounded-xl bg-emerald-600/30 hover:bg-emerald-600 border border-emerald-500/40 flex items-center justify-center text-white transition text-sm">
-                                        <i class="fa-brands fa-whatsapp"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- BRAND RECOMMENDATION SECTION -->
-        <section id="branding" class="py-16 bg-white border-b border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-gold-600 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3.5 py-1 rounded-full">Branding Recommendation</span>
-                    <h2 class="text-2xl sm:text-4xl font-extrabold text-teal-950 mt-3">Recommended Academy Name for Overseas Clients</h2>
-                    <p class="text-slate-600 mt-2 text-sm sm:text-base">
-                        To attract foreign students from the US, UK, Canada, and Gulf, using a professional academy name creates instant trust and authority beyond just a personal profile.
-                    </p>
-                </div>
-
-                <!-- Top Selected Name Banner -->
-                <div class="bg-gradient-to-r from-teal-950 to-teal-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl border-2 border-gold-400 relative overflow-hidden mb-8">
-                    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                        <div class="space-y-2 text-center md:text-left">
-                            <span class="bg-gold-500 text-teal-950 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full inline-block">★ TOP #1 RECOMMENDED NAME</span>
-                            <h3 class="text-2xl sm:text-3xl font-black text-gold-400">Al-Safwan Learning Academy</h3>
-                            <p class="text-slate-300 text-xs sm:text-sm max-w-2xl">
-                                <em>Why it works:</em> "Al-Safwan" preserves your authentic Islamic identity while "Learning Academy" allows you to teach both <strong>Quranic Sciences & Academic STEM subjects (Chemistry/Math)</strong> under one single premium brand umbrella.
-                            </p>
-                        </div>
-                        <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20like%20the%20name%20Al-Safwan%20Learning%20Academy!" 
-                           target="_blank" 
-                           class="bg-gradient-to-r from-gold-500 to-amber-600 text-teal-950 font-extrabold px-6 py-3.5 rounded-xl text-xs sm:text-sm shadow-md hover:from-gold-400 hover:to-amber-500 transition whitespace-nowrap">
-                            Select This Branding
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Alternative Branding Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    
-                    <!-- Option 2 -->
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-gold-400 transition">
-                        <span class="text-teal-800 text-xs font-bold uppercase tracking-wider block mb-1">Option 2</span>
-                        <h4 class="text-lg font-bold text-teal-950 mb-2">Safwan Quran & STEM Academy</h4>
-                        <p class="text-slate-600 text-xs leading-relaxed">
-                            Highlights both your religious mastery and engineering analytical background directly in the title. Best for families looking for all-in-one private tuition for their children.
-                        </p>
-                    </div>
-
-                    <!-- Option 3 -->
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-gold-400 transition">
-                        <span class="text-teal-800 text-xs font-bold uppercase tracking-wider block mb-1">Option 3</span>
-                        <h4 class="text-lg font-bold text-teal-950 mb-2">Al-Safwan Quranic Institute</h4>
-                        <p class="text-slate-600 text-xs leading-relaxed">
-                            A traditional, prestigious title suitable if you want to focus 100% strictly on Nazra Quran, Tajweed rules, and Hifz memorization for overseas Muslim children.
-                        </p>
-                    </div>
-
-                    <!-- Option 4 -->
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-gold-400 transition">
-                        <span class="text-teal-800 text-xs font-bold uppercase tracking-wider block mb-1">Option 4 (Personal Brand)</span>
-                        <h4 class="text-lg font-bold text-teal-950 mb-2">Hafiz Safwan Online Tuition</h4>
-                        <p class="text-slate-600 text-xs leading-relaxed">
-                            A personal 1-on-1 private tutor brand approach that builds strong personal rapport and direct trust between parents and Hafiz Safwan.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SERVICES & COURSES OFFERED -->
-        <section id="services" class="py-16 sm:py-24 bg-slate-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-teal-850 font-bold text-xs uppercase tracking-widest bg-teal-200/70 px-3.5 py-1 rounded-full">Comprehensive Subjects</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-teal-950 mt-3">Courses & Academic Offerings</h2>
-                    <p class="text-slate-600 mt-3 text-sm sm:text-base">
-                        Structured step-by-step learning plans conducted live via Zoom or Skype with interactive digital whiteboards and personalized progress tracking.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Course 1 -->
-                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:shadow-xl hover:border-gold-500 transition">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-teal-950 text-gold-400 flex items-center justify-center text-xl mb-5 shadow-md">
-                                <i class="fa-solid fa-book-quran"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-teal-950 mb-2">Quran Recitation & Tajweed</h3>
-                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                                From basic Qaida alphabets to fluent Quranic reading with exact Tajweed rules and correct Makharij.
-                            </p>
-                            <ul class="space-y-2 text-xs text-slate-700 font-medium">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Noorani / Madani Qaida</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Correct Letter Pronunciation</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Tajweed Rules in English/Urdu</li>
-                            </ul>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100">
-                            <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20am%20interested%20in%20Tajweed%20and%20Nazra%20classes." target="_blank" class="text-teal-900 font-bold text-xs inline-flex items-center gap-2 hover:text-gold-600">
-                                Book This Course <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Course 2 -->
-                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:shadow-xl hover:border-gold-500 transition">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-emerald-900 text-gold-400 flex items-center justify-center text-xl mb-5 shadow-md">
-                                <i class="fa-solid fa-kaaba"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-teal-950 mb-2">Quran Memorization (Hifz)</h3>
-                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                                Systematic memorization for full Hifz or selective Surahs with daily Sabaq, Sabqi, and Manzil revision tracking.
-                            </p>
-                            <ul class="space-y-2 text-xs text-slate-700 font-medium">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Full & Partial Hifz Program</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Daily Revision Plan</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Retention Techniques</li>
-                            </ul>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100">
-                            <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20am%20interested%20in%20Quran%20Hifz%20memorization." target="_blank" class="text-teal-900 font-bold text-xs inline-flex items-center gap-2 hover:text-gold-600">
-                                Book This Course <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Course 3 -->
-                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:shadow-xl hover:border-gold-500 transition">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-amber-800 text-gold-400 flex items-center justify-center text-xl mb-5 shadow-md">
-                                <i class="fa-solid fa-hands-praying"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-teal-950 mb-2">Islamic Studies & Duas</h3>
-                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                                Vital Islamic tarbiyah for children living in Western countries to build authentic faith and daily Sunnah habits.
-                            </p>
-                            <ul class="space-y-2 text-xs text-slate-700 font-medium">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Masnoon Duas & 6 Kalimas</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Practical Namaz (Salah) & Wudu</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Prophet Stories & Ethics</li>
-                            </ul>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100">
-                            <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20want%20to%20enroll%20in%20Islamic%20Studies%20and%20Duas." target="_blank" class="text-teal-900 font-bold text-xs inline-flex items-center gap-2 hover:text-gold-600">
-                                Book This Course <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Course 4 -->
-                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:shadow-xl hover:border-gold-500 transition">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-teal-900 text-gold-400 flex items-center justify-center text-xl mb-5 shadow-md">
-                                <i class="fa-solid fa-flask-vial"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-teal-950 mb-2">Chemistry & Science STEM</h3>
-                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                                Mentorship in Chemistry and Data Science problem-solving by a Master's Chemistry & Engineer degree holder.
-                            </p>
-                            <ul class="space-y-2 text-xs text-slate-700 font-medium">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> High School & College Chemistry</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Data Analysis Logic</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> STEM Homework Help</li>
-                            </ul>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100">
-                            <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20am%20interested%20in%20Chemistry%20and%20Science%20tutoring." target="_blank" class="text-teal-900 font-bold text-xs inline-flex items-center gap-2 hover:text-gold-600">
-                                Book This Course <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- PRICING & PACKAGES SECTION -->
-        <section id="pricing" class="py-16 sm:py-24 bg-white relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-14">
-                    <span class="text-gold-600 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3.5 py-1 rounded-full">Attractive Tuition Rates</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-teal-950 mt-3">Monthly Tuition Plans & Pricing</h2>
-                    <p class="text-slate-600 mt-3 text-sm sm:text-base">
-                        Affordable 1-on-1 tuition packages designed for foreign students (USA, UK, Canada, Australia, Europe & Gulf). Includes <strong>Free 3-Day Live Trial</strong>.
-                    </p>
-
-                    <div class="inline-flex items-center justify-center gap-3 bg-slate-100 p-1.5 rounded-2xl mt-6 border border-slate-200 text-xs font-semibold">
-                        <span class="px-3 py-1 rounded-xl bg-teal-950 text-white shadow">USD ($) Standard</span>
-                        <span class="px-3 py-1 rounded-xl text-slate-600">GBP (£), EUR (€), CAD & AUD Accepted</span>
-                    </div>
-                </div>
-
-                <!-- Pricing Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-                    
-                    <!-- Starter Plan -->
-                    <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-md flex flex-col justify-between hover:shadow-xl transition relative">
-                        <div>
-                            <div class="flex items-center justify-between">
-                                <h3 class="text-xl font-bold text-teal-950">Basic Starter</h3>
-                                <span class="text-xs font-bold text-teal-800 bg-teal-100 px-2.5 py-1 rounded-full">2 Days / Week</span>
-                            </div>
-                            <p class="text-xs text-slate-500 mt-2">Perfect for young kids or slow-paced beginner Qaida & Tajweed.</p>
-
-                            <div class="my-6">
-                                <div class="flex items-baseline gap-1">
-                                    <span class="text-4xl font-extrabold text-teal-950">$35</span>
-                                    <span class="text-slate-500 text-xs font-medium">/ month</span>
-                                </div>
-                                <span class="text-emerald-700 text-xs font-semibold block mt-1">✓ Includes Free 3-Day Trial</span>
-                            </div>
-
-                            <ul class="space-y-3 text-xs text-slate-700 border-t border-slate-200 pt-6">
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> 8 Live Classes per Month
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> 30-Minute 1-on-1 Sessions
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> Basic Qaida & Tajweed Practice
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> Short Duas & 6 Kalimas
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> Flexible Time Slot Booking
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="mt-8 space-y-2">
-                            <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20want%20to%20enroll%20in%20the%20Basic%20Starter%20Plan%20($35/mo)." 
-                               target="_blank" 
-                               class="w-full inline-flex items-center justify-center gap-2 bg-teal-950 hover:bg-teal-900 text-white font-bold py-3.5 rounded-xl transition text-xs shadow-md">
-                                <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i> Select Basic Plan
-                            </a>
-                            <a href="#contact" class="block text-center text-xs font-semibold text-slate-600 hover:text-teal-950 py-1">Or Request Trial Form</a>
-                        </div>
-                    </div>
-
-                    <!-- Popular Plan (FEATURED) -->
-                    <div class="bg-gradient-to-b from-teal-950 via-teal-900 to-teal-950 rounded-3xl p-8 text-white shadow-2xl relative border-2 border-gold-400 flex flex-col justify-between transform md:-translate-y-3">
-                        <div class="absolute -top-4 right-6 bg-gradient-to-r from-gold-500 to-amber-500 text-teal-950 text-[11px] font-black uppercase px-4 py-1.5 rounded-full shadow-lg">
-                            ★ MOST POPULAR & BEST VALUE
-                        </div>
-
-                        <div>
-                            <div class="flex items-center justify-between">
-                                <h3 class="text-xl font-bold text-gold-400">Standard Tajweed</h3>
-                                <span class="text-xs font-bold text-gold-300 bg-teal-850 px-2.5 py-1 rounded-full border border-gold-500/30">3 Days / Week</span>
-                            </div>
-                            <p class="text-xs text-slate-300 mt-2">Recommended for fluent Nazra reading, Tajweed rules, and daily Sunnah learning.</p>
-
-                            <div class="my-6">
-                                <div class="flex items-baseline gap-1">
-                                    <span class="text-5xl font-extrabold text-white">$55</span>
-                                    <span class="text-gold-300 text-xs font-medium">/ month</span>
-                                </div>
-                                <span class="text-emerald-400 text-xs font-semibold block mt-1">★ Includes Free 3-Day Trial</span>
-                            </div>
-
-                            <ul class="space-y-3 text-xs text-slate-200 border-t border-teal-800 pt-6">
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-400"></i> 12 Live Classes per Month
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-400"></i> 30-Minute 1-on-1 Sessions
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-400"></i> Complete Tajweed Rules & Practice
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-400"></i> Daily Duas, Namaz & Surah Memorization
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-gold-400"></i> Monthly Parent Progress Reports
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="mt-8 space-y-2">
-                            <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20want%20to%20enroll%20in%20the%20Standard%20Tajweed%20Plan%20($55/mo)." 
-                               target="_blank" 
-                               class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-teal-950 font-extrabold py-4 rounded-xl transition text-sm shadow-xl">
-                                <i class="fa-brands fa-whatsapp text-lg"></i> Select Standard Plan
-                            </a>
-                            <a href="#contact" class="block text-center text-xs font-semibold text-gold-300 hover:text-white py-1">Or Request Trial Form</a>
-                        </div>
-                    </div>
-
-                    <!-- Intensive Plan -->
-                    <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-md flex flex-col justify-between hover:shadow-xl transition relative">
-                        <div>
-                            <div class="flex items-center justify-between">
-                                <h3 class="text-xl font-bold text-teal-950">Intensive / Hifz</h3>
-                                <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-full">5 Days / Week</span>
-                            </div>
-                            <p class="text-xs text-slate-500 mt-2">Designed for full Quran Hifz memorization or combined Quran + Chemistry tutoring.</p>
-
-                            <div class="my-6">
-                                <div class="flex items-baseline gap-1">
-                                    <span class="text-4xl font-extrabold text-teal-950">$90</span>
-                                    <span class="text-slate-500 text-xs font-medium">/ month</span>
-                                </div>
-                                <span class="text-emerald-700 text-xs font-semibold block mt-1">✓ Includes Free 3-Day Trial</span>
-                            </div>
-
-                            <ul class="space-y-3 text-xs text-slate-700 border-t border-slate-200 pt-6">
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> 20 Live Classes per Month
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> 30-Minute Daily 1-on-1 Sessions
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> Structured Hifz Method (Sabaq, Sabqi, Manzil)
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> Quranic Recitation Tuning
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> Option for Quran + Science Combo
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="mt-8 space-y-2">
-                            <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20want%20to%20enroll%20in%20the%20Intensive%20Hifz%20Plan%20($90/mo)." 
-                               target="_blank" 
-                               class="w-full inline-flex items-center justify-center gap-2 bg-teal-950 hover:bg-teal-900 text-white font-bold py-3.5 rounded-xl transition text-xs shadow-md">
-                                <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i> Select Hifz Plan
-                            </a>
-                            <a href="#contact" class="block text-center text-xs font-semibold text-slate-600 hover:text-teal-950 py-1">Or Request Trial Form</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Family Discount Banner -->
-                <div class="mt-12 bg-gradient-to-r from-teal-950 via-teal-900 to-slate-900 rounded-3xl p-6 sm:p-8 text-white border border-gold-500/30 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div class="flex items-center gap-4 text-center md:text-left">
-                        <div class="w-14 h-14 rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-2xl shrink-0 hidden sm:flex">
-                            <i class="fa-solid fa-people-roof"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-gold-400">20% Sibling & Family Discount Available</h4>
-                            <p class="text-xs sm:text-sm text-slate-300 mt-1">
-                                Enrolling multiple children? Get <strong>20% OFF</strong> for additional family members! Custom class schedules available for parents in the USA, UK, Canada, & Australia.
-                            </p>
-                        </div>
-                    </div>
-
-                    <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20want%20to%20ask%20about%20the%2020%25%20Sibling%20Family%20Discount." 
+                <!-- CTA & Mobile Menu Button -->
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20would%20like%20to%20book%20a%203-Day%20Free%20Trial%20class." 
                        target="_blank" 
-                       class="bg-emerald-500 hover:bg-emerald-400 text-teal-950 font-extrabold px-6 py-3.5 rounded-xl transition text-xs sm:text-sm whitespace-nowrap shadow-md inline-flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Claim Sibling Discount
+                       class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-semibold px-4 py-2.5 rounded-full shadow-lg border border-emerald-400/30 text-sm transition-all hover:shadow-emerald-900/40">
+                        <i class="fa-brands fa-whatsapp text-lg text-green-400"></i>
+                        <span>WhatsApp Direct</span>
                     </a>
-                </div>
 
+                    <button onclick="openModal()" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-emerald-950 font-bold px-4 py-2.5 rounded-full text-sm shadow-md transition-all hover:scale-105">
+                        Book Free Trial
+                    </button>
+
+                    <!-- Mobile Toggle -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden text-sand-100 hover:text-gold-400 p-2 focus:outline-none" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+                    </button>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <!-- WHY CHOOSE HAFIZ SAFWAN SECTION -->
-        <section id="why-me" class="py-16 sm:py-24 bg-slate-900 text-white relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-gold-400 font-bold text-xs uppercase tracking-widest bg-teal-850 px-3.5 py-1 rounded-full border border-gold-500/30">Distinct Teaching Methodology</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Why Overseas Parents Choose Hafiz Safwan</h2>
-                    <p class="text-slate-300 mt-3 text-sm sm:text-base">
-                        Merging traditional Islamic respect with modern analytical engineering logic to make Quran & Science learning engaging for kids.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <!-- Feature 1 -->
-                    <div class="bg-teal-950/80 p-8 rounded-3xl border border-teal-800/60 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl mb-6">
-                                <i class="fa-solid fa-microscope"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3">Data Science & STEM Pedagogy</h3>
-                            <p class="text-slate-300 text-xs leading-relaxed">
-                                As a BS Data Science Engineer and Chemistry Master, I structure lessons with structured logic, visual whiteboards, and clear step-by-step progress tracking that resonates with Western-educated kids.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-teal-900 text-[11px] text-gold-400 font-semibold">
-                            ✓ Structured & Analytical Methodology
-                        </div>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div class="bg-teal-950/80 p-8 rounded-3xl border border-teal-800/60 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl mb-6">
-                                <i class="fa-solid fa-clock font-bold"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3">Flexible Overseas Timezones</h3>
-                            <p class="text-slate-300 text-xs leading-relaxed">
-                                Seamlessly matching student availability across EST, CST, PST, GMT, and Gulf standard times so children can learn conveniently after school or on weekends.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-teal-900 text-[11px] text-gold-400 font-semibold">
-                            ✓ USA, UK, Canada & Gulf Friendly Hours
-                        </div>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="bg-teal-950/80 p-8 rounded-3xl border border-teal-800/60 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl mb-6">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3">Patient & Friendly Approach</h3>
-                            <p class="text-slate-300 text-xs leading-relaxed">
-                                Over 10+ years of teaching experience (since 2015) has mastered a gentle, encouraging classroom environment where young students feel comfortable asking questions and practicing Tajweed without fear.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-teal-900 text-[11px] text-gold-400 font-semibold">
-                            ✓ 100% Kid-Friendly & Interactive Environment
-                        </div>
-                    </div>
-
-                </div>
-
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-emerald-950 border-b border-gold-500/20 px-4 pt-3 pb-6 space-y-3">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-sand-100 hover:text-gold-400 font-medium">Home</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sand-100 hover:text-gold-400 font-medium">About Educator</a>
+            <a href="#tilawat" onclick="toggleMobileMenu()" class="block py-2 text-gold-400 font-medium flex items-center gap-2"><i class="fa-solid fa-play text-xs"></i> Tilawat Videos</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-sand-100 hover:text-gold-400 font-medium">Courses & Method</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="block py-2 text-sand-100 hover:text-gold-400 font-medium">Fee Plans</a>
+            <a href="#academies" onclick="toggleMobileMenu()" class="block py-2 text-sand-100 hover:text-gold-400 font-medium">Recommended Academies</a>
+            <div class="pt-3 border-t border-emerald-800 flex flex-col gap-2">
+                <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20want%20to%20inquire%20about%20Quran%20classes." target="_blank" class="w-full text-center py-2.5 bg-emerald-800 hover:bg-emerald-700 text-white font-semibold rounded-lg flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-green-400 text-lg"></i> Contact on WhatsApp
+                </a>
             </div>
-        </section>
+        </div>
+    </nav>
 
-        <!-- STUDENT TESTIMONIALS SECTION -->
-        <section id="testimonials" class="py-16 sm:py-24 bg-slate-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- HERO SECTION -->
+    <section id="home" class="relative bg-emerald-950 text-white overflow-hidden py-16 lg:py-24 border-b border-gold-500/30">
+        <!-- Overlay patterns -->
+        <div class="absolute inset-0 arabic-bg-pattern opacity-30"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-teal-850 font-bold text-xs uppercase tracking-widest bg-teal-200/70 px-3.5 py-1 rounded-full">Parent Reviews</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-teal-950 mt-3">What Overseas Families Say</h2>
-                    <p class="text-slate-600 mt-3 text-sm sm:text-base">
-                        Feedback from parents whose kids are learning Nazra Quran, Tajweed, and Science online.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    
-                    <!-- Review 1 -->
-                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-1 text-gold-500 mb-4 text-sm">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-slate-600 text-xs leading-relaxed italic mb-6">
-                                "Hafiz Safwan has been teaching my two sons (aged 8 and 11) in Texas for over a year. His background in STEM makes his teaching logic so structured! My kids look forward to their Quran class every week."
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
-                            <div class="w-10 h-10 rounded-full bg-teal-950 text-gold-400 flex items-center justify-center font-bold text-xs">
-                                AK
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-bold text-teal-950">Ahmed Khan</h4>
-                                <p class="text-[11px] text-slate-500">Houston, Texas (USA)</p>
-                            </div>
-                        </div>
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-900/80 border border-gold-500/40 text-gold-400 text-xs sm:text-sm font-semibold shadow-inner">
+                        <i class="fa-solid fa-star text-gold-400"></i>
+                        <span>Dual Quranic & Data Science Scientific Pedagogy</span>
                     </div>
 
-                    <!-- Review 2 -->
-                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-1 text-gold-500 mb-4 text-sm">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-slate-600 text-xs leading-relaxed italic mb-6">
-                                "Finding an online Quran teacher who speaks clear English and understands kids raised in the UK was tough until we found Teacher Safwan. His Tajweed pronunciation guidance is excellent."
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
-                            <div class="w-10 h-10 rounded-full bg-emerald-900 text-gold-400 flex items-center justify-center font-bold text-xs">
-                                SF
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-bold text-teal-950">Sister Fatima</h4>
-                                <p class="text-[11px] text-slate-500">London, United Kingdom</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Review 3 -->
-                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-1 text-gold-500 mb-4 text-sm">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-slate-600 text-xs leading-relaxed italic mb-6">
-                                "We also enrolled my daughter for Chemistry tuition alongside Quran recitation with Hafiz Safwan. Having both Quran and science covered by such a qualified teacher is a huge blessing!"
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
-                            <div class="w-10 h-10 rounded-full bg-amber-800 text-gold-400 flex items-center justify-center font-bold text-xs">
-                                MR
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-bold text-teal-950">Dr. M. Rashid</h4>
-                                <p class="text-[11px] text-slate-500">Toronto, Canada</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- BOOK FREE TRIAL / CONTACT SECTION -->
-        <section id="contact" class="py-16 sm:py-24 bg-white relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                    
-                    <!-- Contact Info Left -->
-                    <div class="lg:col-span-5 space-y-6">
-                        <div>
-                            <span class="text-gold-600 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3.5 py-1 rounded-full">Get In Touch</span>
-                            <h2 class="text-3xl font-extrabold text-teal-950 mt-3">Schedule Your Free 3-Day Trial Class</h2>
-                            <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
-                                Experience 1-on-1 teaching live on Zoom/Skype before making any commitment. Send a message on WhatsApp or fill out the quick form.
-                            </p>
-                        </div>
-
-                        <!-- Direct Contact Cards -->
-                        <div class="space-y-4">
-                            
-                            <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20want%20to%20book%20a%20Free%20Trial." 
-                               target="_blank" 
-                               class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center gap-4 hover:bg-emerald-100 transition group">
-                                <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shrink-0 shadow-md">
-                                    <i class="fa-brands fa-whatsapp"></i>
-                                </div>
-                                <div>
-                                    <span class="text-[11px] font-bold uppercase text-emerald-800 tracking-wider">Direct WhatsApp Chat</span>
-                                    <h4 class="text-base font-extrabold text-teal-950 group-hover:text-emerald-700 transition">+92 309 3214855</h4>
-                                    <p class="text-[11px] text-slate-500">Click for instant response on WhatsApp</p>
-                                </div>
-                            </a>
-
-                            <!-- Social Media Directory -->
-                            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
-                                <span class="text-xs font-bold text-slate-700 uppercase tracking-wider block">Official Social Media Profiles</span>
-                                
-                                <a href="https://www.facebook.com/saffwan64" target="_blank" class="flex items-center justify-between text-xs text-slate-700 hover:text-blue-600 font-semibold p-2 rounded-xl hover:bg-white transition">
-                                    <span class="flex items-center gap-2.5"><i class="fa-brands fa-facebook text-blue-600 text-base"></i> Facebook Page</span>
-                                    <span class="text-slate-400 text-[11px]">@saffwan64 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></span>
-                                </a>
-
-                                <a href="https://www.instagram.com/m_safwan_64" target="_blank" class="flex items-center justify-between text-xs text-slate-700 hover:text-pink-600 font-semibold p-2 rounded-xl hover:bg-white transition">
-                                    <span class="flex items-center gap-2.5"><i class="fa-brands fa-instagram text-pink-600 text-base"></i> Instagram</span>
-                                    <span class="text-slate-400 text-[11px]">@m_safwan_64 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></span>
-                                </a>
-
-                                <a href="https://www.tiktok.com/@hmsaffwan64" target="_blank" class="flex items-center justify-between text-xs text-slate-700 hover:text-black font-semibold p-2 rounded-xl hover:bg-white transition">
-                                    <span class="flex items-center gap-2.5"><i class="fa-brands fa-tiktok text-slate-900 text-base"></i> TikTok Profile</span>
-                                    <span class="text-slate-400 text-[11px]">@hmsaffwan64 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></span>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Booking Form Right -->
-                    <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-lg">
-                        <h3 class="text-xl font-bold text-teal-950 mb-1">Book Your Free 3-Day Trial</h3>
-                        <p class="text-xs text-slate-500 mb-6">Fill in your details and Hafiz Safwan will reach out via WhatsApp/Email to schedule your live session.</p>
-
-                        <form id="trial-form" class="space-y-4">
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Parent / Student Name *</label>
-                                    <input type="text" required placeholder="e.g. Brother Ahmed" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-800 text-xs bg-white">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">WhatsApp / Phone Number *</label>
-                                    <input type="tel" id="form-phone" required placeholder="+1 (555) 000-0000" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-800 text-xs bg-white">
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Country / Timezone *</label>
-                                    <input type="text" required placeholder="e.g. USA (EST) or London (GMT)" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-800 text-xs bg-white">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Plan / Course Interest *</label>
-                                    <select id="form-course" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-800 text-xs bg-white">
-                                        <option value="">Select Course</option>
-                                        <option value="Nazra & Tajweed">Nazra & Tajweed Rules</option>
-                                        <option value="Quran Hifz">Quran Hifz (Memorization)</option>
-                                        <option value="Islamic Studies">Islamic Studies & Duas</option>
-                                        <option value="Chemistry & STEM">Chemistry & Science Tutoring</option>
-                                        <option value="Family Bundle">Family Sibling Discount Bundle</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Additional Notes (Optional)</label>
-                                <textarea id="form-notes" rows="3" placeholder="Tell us about the student's age, current Quran reading level, or preferred class timings..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-800 text-xs bg-white"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full bg-gradient-to-r from-teal-950 to-teal-900 hover:from-teal-900 hover:to-teal-850 text-gold-400 font-extrabold py-4 rounded-xl shadow-lg transition text-xs uppercase tracking-wider flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i> Request Free Trial Class
-                            </button>
-
-                        </form>
-
-                        <p class="text-[11px] text-slate-400 text-center mt-3">
-                            <i class="fa-solid fa-lock text-slate-400 mr-1"></i> No credit card required. Guaranteed privacy & 100% free trial.
+                    <!-- Arabic Verse callout -->
+                    <div class="py-2">
+                        <p class="font-quran text-2xl sm:text-3xl text-gold-400 tracking-wide dir-rtl" lang="ar">
+                            خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ
+                        </p>
+                        <p class="text-xs text-sand-200 italic mt-1 font-light">
+                            "The best among you are those who learn the Qur'an and teach it." (Sahih Al-Bukhari)
                         </p>
                     </div>
 
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Learn Tajweed & Quran <br class="hidden sm:inline"/>With <span class="gold-gradient-text">Analytical Precision</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-sand-100 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Guided by <strong class="text-white font-semibold">Hafiz Muhammad Safwan</strong> — Certified Quran Reciter with 10+ Years Teaching Experience, holding a Master in Chemistry and BS Data Science Engineering. Empowering students worldwide with authentic Makharij, Tajweed, and structured Hifz.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <button onclick="openModal()" class="w-full sm:w-auto bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-emerald-950 font-extrabold px-8 py-4 rounded-xl shadow-xl hover:shadow-gold-500/20 transition-all transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calendar-check text-lg"></i>
+                            <span>Book 3-Day Free Trial</span>
+                        </button>
+                        
+                        <a href="#tilawat" class="w-full sm:w-auto bg-emerald-900/80 hover:bg-emerald-800 text-sand-100 font-semibold px-6 py-4 rounded-xl border border-gold-500/30 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-play text-gold-400 text-lg"></i>
+                            <span>Listen To Recitations</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators / Stats -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-emerald-800/80">
+                        <div class="bg-emerald-900/40 p-3 rounded-xl border border-gold-500/20 text-center">
+                            <span class="block text-2xl font-extrabold text-gold-400">10+ Yrs</span>
+                            <span class="text-xs text-sand-200">Teaching Exp</span>
+                        </div>
+                        <div class="bg-emerald-900/40 p-3 rounded-xl border border-gold-500/20 text-center">
+                            <span class="block text-2xl font-extrabold text-gold-400">100+</span>
+                            <span class="text-xs text-sand-200">Global Students</span>
+                        </div>
+                        <div class="bg-emerald-900/40 p-3 rounded-xl border border-gold-500/20 text-center">
+                            <span class="block text-2xl font-extrabold text-gold-400">Tajweed</span>
+                            <span class="text-xs text-sand-200">Mastery Certified</span>
+                        </div>
+                        <div class="bg-emerald-900/40 p-3 rounded-xl border border-gold-500/20 text-center">
+                            <span class="block text-2xl font-extrabold text-gold-400">M.Sc & BS</span>
+                            <span class="text-xs text-sand-200">STEM Background</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Card / Educator Profile Feature -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative glow -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-emerald-600 rounded-2xl blur-lg opacity-40"></div>
+                        
+                        <div class="relative glass-card-dark rounded-2xl p-6 border border-gold-500/40 text-sand-50 shadow-2xl">
+                            <div class="flex items-center gap-4 border-b border-emerald-800/80 pb-4 mb-4">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-gold-400 to-emerald-600 flex items-center justify-center text-3xl text-emerald-950 font-bold border-2 border-gold-400 shadow-md">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Hafiz Muhammad Safwan</h3>
+                                    <p class="text-xs text-gold-400 font-medium">Founder & Head Educator</p>
+                                    <p class="text-xs text-sand-200">Al-Safwan Online Quran Academy</p>
+                                </div>
+                            </div>
+
+                            <ul class="space-y-3 text-xs sm:text-sm text-sand-100">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                                    <span><strong>10+ Years Experience:</strong> Specializing in Nazra, Tajweed-ul-Quran, and Hifz memorization.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-microscope text-gold-400 mt-1"></i>
+                                    <span><strong>Master in Chemistry:</strong> Deep scientific approach to systematic student progress.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-code text-gold-400 mt-1"></i>
+                                    <span><strong>BS Data Science Engineer:</strong> Modern interactive curriculum and data-tracked revision plans.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-globe text-gold-400 mt-1"></i>
+                                    <span><strong>International Flexibility:</strong> Customized 1-on-1 online sessions across USA, UK, Canada, Australia & Gulf.</span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-6 pt-4 border-t border-emerald-800/80 flex items-center justify-between">
+                                <span class="text-xs text-sand-200">Need personalized plan?</span>
+                                <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20would%20like%20to%20discuss%20a%20customized%20Quran%20learning%20schedule." 
+                                   target="_blank" 
+                                   class="text-xs bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+                                    <i class="fa-brands fa-whatsapp"></i> Chat Direct
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-teal-950 text-white border-t border-teal-850 pt-16 pb-12">
+    <!-- RECITATION VIDEOS SECTION (FEATURED EMBEDS) -->
+    <section id="tilawat" class="py-16 sm:py-24 bg-sand-100 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-teal-900">
-                
-                <!-- Footer Brand Left -->
-                <div class="md:col-span-5 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-teal-950 font-black text-xl shadow-md">
-                            <i class="fa-solid fa-book-quran"></i>
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-emerald-850 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-gold-500/20 rounded-full border border-gold-500/30">Authentic Recitations</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-emerald-950 mt-3">Tilawat Quran Series by Hafiz Safwan</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">Listen to live recitations showcasing standard Tajweed rules, proper Makharij, and soothing Qirat style.</p>
+            </div>
+
+            <!-- FEATURED WIDE VIDEO: Surah Ad-Duhaa -->
+            <div class="mb-12">
+                <div class="bg-emerald-950 rounded-2xl p-4 sm:p-6 shadow-2xl border-2 border-gold-500/40">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4 pb-4 border-b border-emerald-800">
+                        <div>
+                            <span class="bg-gold-500 text-emerald-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Featured Full Recitation</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">Surah Ad-Duhaa (سورۃ الضحى) — Chapter 93 | Episode 22</h3>
                         </div>
-                        <span class="text-xl font-black text-white">Al-Safwan Learning Academy</span>
+                        <a href="https://www.youtube.com/embed/0jdvHq36IVE" target="_blank" class="text-xs text-gold-400 hover:text-white flex items-center gap-1">
+                            <span>Open on YouTube</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
                     </div>
+                    
+                    <!-- Responsive 16:9 Embed Wrapper -->
+                    <div class="relative w-full rounded-xl overflow-hidden shadow-lg border border-gold-500/20" style="padding-top: 56.25%;">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/0jdvHq36IVE" 
+                            title="Surah Ad-Duhaa  x سورہ الضحی - Chapter:93 | Tilawat Quran Series - Episode:22 | Juz 30" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
 
-                    <p class="text-xs text-slate-300 leading-relaxed max-w-sm">
-                        Dedicated 1-on-1 online Quran recitations, Tajweed, Hifz, Islamic Studies, and STEM Chemistry tutoring for international students. Led by Hafiz Muhammad Safwan (10+ years experience).
-                    </p>
-
-                    <!-- Official Links -->
-                    <div class="flex items-center gap-3 pt-2">
-                        <a href="https://wa.me/923093214855" target="_blank" class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white text-sm hover:bg-emerald-500 transition" title="WhatsApp">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        <a href="https://www.facebook.com/saffwan64" target="_blank" class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white text-sm hover:bg-blue-500 transition" title="Facebook">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/m_safwan_64" target="_blank" class="w-9 h-9 rounded-xl bg-pink-600 flex items-center justify-center text-white text-sm hover:bg-pink-500 transition" title="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@hmsaffwan64" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center text-white text-sm hover:bg-black transition" title="TikTok">
-                            <i class="fa-brands fa-tiktok"></i>
-                        </a>
+            <!-- VERTICAL SHORT VIDEOS GRID (Side by Side) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                
+                <!-- Vertical Card 1: Surah Al-A'raf -->
+                <div class="bg-emerald-950 rounded-2xl p-4 sm:p-6 shadow-xl border border-gold-500/30 flex flex-col items-center">
+                    <div class="w-full pb-3 mb-3 border-b border-emerald-800 flex items-center justify-between">
+                        <span class="text-gold-400 text-xs font-bold flex items-center gap-1.5">
+                            <i class="fa-solid fa-mobile-screen text-xs"></i> Vertical Shorts Recitation
+                        </span>
+                        <span class="text-sand-200 text-xs">Jannah Verses</span>
+                    </div>
+                    <h4 class="text-white text-center font-bold text-lg mb-4">Who Will Enter Jannah? | Surah Al-A'raf (Ayat 40-42)</h4>
+                    
+                    <!-- Vertical ratio 9:16 optimized wrapper -->
+                    <div class="relative w-full max-w-[315px] rounded-xl overflow-hidden shadow-2xl border border-gold-500/20" style="padding-top: 177.77%;">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/tHPfiDdEvH0" 
+                            title="Who Will Enter Jannah? | Surah Al-A'raf Recitation (Ayat 40-42)" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
 
-                <!-- Footer Quick Links -->
-                <div class="md:col-span-3 space-y-3">
-                    <h4 class="text-xs font-bold text-gold-400 uppercase tracking-widest">Navigation</h4>
-                    <ul class="space-y-2 text-xs text-slate-300">
-                        <li><a href="#about" class="hover:text-gold-400 transition">About Hafiz Safwan</a></li>
-                        <li><a href="#branding" class="hover:text-gold-400 transition">Academy Branding</a></li>
-                        <li><a href="#services" class="hover:text-gold-400 transition">Courses & Subjects</a></li>
-                        <li><a href="#pricing" class="hover:text-gold-400 transition">Tuition Rates ($35-$90)</a></li>
-                        <li><a href="#why-me" class="hover:text-gold-400 transition">Why Choose Me</a></li>
+                <!-- Vertical Card 2: Convocation Recitation -->
+                <div class="bg-emerald-950 rounded-2xl p-4 sm:p-6 shadow-xl border border-gold-500/30 flex flex-col items-center">
+                    <div class="w-full pb-3 mb-3 border-b border-emerald-800 flex items-center justify-between">
+                        <span class="text-gold-400 text-xs font-bold flex items-center gap-1.5">
+                            <i class="fa-solid fa-graduation-cap text-xs"></i> Event Performance
+                        </span>
+                        <span class="text-sand-200 text-xs">Univ. Convocation</span>
+                    </div>
+                    <h4 class="text-white text-center font-bold text-lg mb-4">Surah Al-Fateh Recitation @ University of Education Convocation</h4>
+                    
+                    <!-- Vertical ratio 9:16 optimized wrapper -->
+                    <div class="relative w-full max-w-[315px] rounded-xl overflow-hidden shadow-2xl border border-gold-500/20" style="padding-top: 177.77%;">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/0pJ8Xh9JRRc" 
+                            title="Surah Al-Fateh Recitation At Convocation @UniversityofEducation" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Social Links & Follow Callout -->
+            <div class="mt-12 text-center bg-white p-6 rounded-2xl shadow-md border border-sand-200 max-w-2xl mx-auto">
+                <h4 class="font-bold text-emerald-950 text-lg mb-2">Follow Hafiz Muhammad Safwan Online</h4>
+                <p class="text-xs text-slate-600 mb-4">Stay updated with daily Tajweed tips, recitations, and Quranic reflections on social media.</p>
+                
+                <div class="flex items-center justify-center gap-4 flex-wrap">
+                    <a href="https://www.facebook.com/saffwan64" target="_blank" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold flex items-center gap-2 transition-all shadow-sm">
+                        <i class="fa-brands fa-facebook-f"></i> Facebook (@saffwan64)
+                    </a>
+                    <a href="https://www.instagram.com/m_safwan_64" target="_blank" class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 text-white text-xs font-semibold flex items-center gap-2 transition-all shadow-sm">
+                        <i class="fa-brands fa-instagram"></i> Instagram (@m_safwan_64)
+                    </a>
+                    <a href="https://www.tiktok.com/@hmsaffwan64" target="_blank" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-black text-white text-xs font-semibold flex items-center gap-2 transition-all shadow-sm">
+                        <i class="fa-brands fa-tiktok"></i> TikTok (@hmsaffwan64)
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT & STEM PEDAGOGY HIGHLIGHT -->
+    <section id="about" class="py-16 sm:py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-emerald-850 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-gold-500/20 rounded-full border border-gold-500/30">Dual Background Advantage</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-emerald-950 mt-3 mb-6 leading-tight">Combining Islamic Traditions With Modern Scientific Pedagogy</h2>
+                    
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base mb-6">
+                        Learning Quran with <strong>Hafiz Muhammad Safwan</strong> brings a unique advantage. With a dual qualification in <em>Islamic Studies/Hifz</em> alongside a <em>Master in Chemistry</em> and a <em>BS in Data Science Engineering</em>, lessons are structured with utmost clarity, logical progression, and analytical feedback.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-sand-50 border border-sand-200">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-850 text-gold-400 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                <i class="fa-solid fa-atom"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-emerald-950 text-sm">Structured Analytical Learning</h4>
+                                <p class="text-xs text-slate-600 mt-1">Breakdown of Tajweed rules (Ghunnah, Qalqalah, Madd) using clear visual phonetic diagrams & systematic revision tracking.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-sand-50 border border-sand-200">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-850 text-gold-400 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-emerald-950 text-sm">Data-Driven Progress Reports</h4>
+                                <p class="text-xs text-slate-600 mt-1">Parents receive monthly metric reports monitoring fluency, error frequency, and Hifz retention rates.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-sand-50 border border-sand-200">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-850 text-gold-400 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                <i class="fa-solid fa-clock font-bold text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-emerald-950 text-sm">Punctual & Patient Environment</h4>
+                                <p class="text-xs text-slate-600 mt-1">10+ years of teaching children & adults with patience, encouragement, and strict adherence to agreed schedules.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-emerald-950 text-white p-6 rounded-2xl border border-gold-500/30 flex flex-col justify-between shadow-lg">
+                        <i class="fa-solid fa-book-quran text-3xl text-gold-400 mb-4"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-gold-400">100% Makharij</h3>
+                            <p class="text-xs text-sand-100 mt-1">Master accurate articulation points of every Arabic letter.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-sand-100 text-emerald-950 p-6 rounded-2xl border border-sand-200 flex flex-col justify-between shadow-md">
+                        <i class="fa-solid fa-brain text-3xl text-emerald-850 mb-4"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-emerald-950">Active Hifz Memory</h3>
+                            <p class="text-xs text-slate-600 mt-1">Proven spaced-repetition techniques for long-term retention.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-sand-100 text-emerald-950 p-6 rounded-2xl border border-sand-200 flex flex-col justify-between shadow-md">
+                        <i class="fa-solid fa-hands-holding-child text-3xl text-emerald-850 mb-4"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-emerald-950">Kid-Friendly</h3>
+                            <p class="text-xs text-slate-600 mt-1">Interactive & engaging methodology for young online learners.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-950 text-white p-6 rounded-2xl border border-gold-500/30 flex flex-col justify-between shadow-lg">
+                        <i class="fa-solid fa-globe text-3xl text-gold-400 mb-4"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-gold-400">Global Timezones</h3>
+                            <p class="text-xs text-sand-100 mt-1">Flexible scheduling for USA, UK, Canada, Australia & Europe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES / SERVICES OFFERED -->
+    <section id="services" class="py-16 sm:py-24 bg-sand-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-850 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-gold-500/20 rounded-full border border-gold-500/30">Curriculum & Courses</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-emerald-950 mt-3">Comprehensive Online Quranic Programs</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">Tailored for beginners, intermediate readers, and advanced students of all ages.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-sand-200 hover:shadow-xl hover:border-gold-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-950 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-emerald-950 mb-2">Noorani Qaida & Nazra</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Foundational course for beginners and children. Covers Arabic alphabet recognition, pronunciation, joined letters, and basic reading.
+                        </p>
+                    </div>
+                    <ul class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-700 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Letter Phonetics & Makharij</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Easy step-by-step booklets</li>
                     </ul>
                 </div>
 
-                <!-- Contact Summary -->
-                <div class="md:col-span-4 space-y-3">
-                    <h4 class="text-xs font-bold text-gold-400 uppercase tracking-widest">Direct Contact</h4>
-                    <p class="text-xs text-slate-300"><i class="fa-solid fa-user-check text-gold-400 mr-2"></i> Instructor: Hafiz Muhammad Safwan</p>
-                    <p class="text-xs text-slate-300"><i class="fa-solid fa-graduation-cap text-gold-400 mr-2"></i> Qualification: Master's Chemistry & BS Data Science</p>
-                    <p class="text-xs text-slate-300"><i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i> WhatsApp: +92 309 3214855</p>
-                    <p class="text-xs text-slate-300"><i class="fa-solid fa-globe text-gold-400 mr-2"></i> Online Platform: Zoom & Skype</p>
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-sand-200 hover:shadow-xl hover:border-gold-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-950 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-ribbon"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-emerald-950 mb-2">Tajweed-ul-Quran</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Advanced rules of recitation including Izhar, Igham, Iqlab, Ikhfa, Madd, and rules of Stop (Waqf) for melodic and correct reading.
+                        </p>
+                    </div>
+                    <ul class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-700 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Practical Verse Recitation</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Tone & Rhythm Refinement</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-sand-200 hover:shadow-xl hover:border-gold-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-950 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-emerald-950 mb-2">Hifz-ul-Quran (Memorization)</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Structured full or partial Surah memorization program with systematic Daily Lesson (Sabaq), Revision (Sabaqi), and Old Revision (Manzil).
+                        </p>
+                    </div>
+                    <ul class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-700 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Retention Techniques</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Daily Revision Schedule</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-sand-200 hover:shadow-xl hover:border-gold-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-950 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hands-praying"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-emerald-950 mb-2">Islamic Studies & Masnoon Duas</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Essential Islamic knowledge including Salah method, daily supplications, Kalimas, 40 Hadith for children, and basic Aqeedah.
+                        </p>
+                    </div>
+                    <ul class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-700 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Practical Namaz Coaching</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Character & Manners (Adab)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING & TUITION FEES SECTION -->
+    <section id="pricing" class="py-16 sm:py-24 bg-emerald-950 text-white relative overflow-hidden">
+        <!-- Background graphics -->
+        <div class="absolute inset-0 arabic-bg-pattern opacity-25"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-gold-400 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-gold-500/10 rounded-full border border-gold-500/30">Affordable Tuition Fees</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Flexible International Monthly Packages</h2>
+                <p class="text-sand-200 text-sm sm:text-base mt-2">1-on-1 Dedicated Online Zoom / Skype Live Classes with Hafiz Muhammad Safwan</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Plan 1: Basic -->
+                <div class="glass-card-dark rounded-2xl p-8 border border-emerald-800 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Basic Plan</h3>
+                        <p class="text-xs text-sand-200 mt-1">Ideal for light schedules & beginners</p>
+                        
+                        <div class="my-6">
+                            <span class="text-4xl font-extrabold text-gold-400">$35</span>
+                            <span class="text-xs text-sand-200">/ Month</span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-sand-100 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> <strong>2 Days</strong> per Week</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> 30 Mins per Session</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> 1-on-1 Personal Class</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> Tajweed & Duas Included</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> Flexible Time Adjustment</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20am%20interested%20in%20the%20Basic%20Plan%20($35/mo)." 
+                       target="_blank" 
+                       class="w-full text-center py-3 rounded-xl bg-emerald-900 hover:bg-emerald-800 text-gold-400 font-bold text-sm border border-gold-500/30 transition-all">
+                        Enroll in Basic Plan
+                    </a>
+                </div>
+
+                <!-- Plan 2: Standard (FEATURED) -->
+                <div class="glass-card-dark rounded-2xl p-8 border-2 border-gold-500 flex flex-col justify-between shadow-2xl relative transform md:-translate-y-2">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gold-400 to-gold-600 text-emerald-950 font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
+                        Most Popular Choice
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Standard Plan</h3>
+                        <p class="text-xs text-gold-400 mt-1">Recommended for fast steady progress</p>
+                        
+                        <div class="my-6">
+                            <span class="text-5xl font-extrabold text-gold-400">$55</span>
+                            <span class="text-xs text-sand-200">/ Month</span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-sand-100 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> <strong>3 Days</strong> per Week</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> 30 Mins per Session</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> 1-on-1 Personal Class</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> Nazra, Tajweed & Hifz</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> Monthly Evaluation Report</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20want%20to%20enroll%20in%20the%20Standard%20Plan%20($55/mo)." 
+                       target="_blank" 
+                       class="w-full text-center py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-emerald-950 font-extrabold text-sm shadow-lg transition-all hover:scale-105">
+                        Enroll Standard Plan
+                    </a>
+                </div>
+
+                <!-- Plan 3: Intensive -->
+                <div class="glass-card-dark rounded-2xl p-8 border border-emerald-800 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Intensive Hifz Plan</h3>
+                        <p class="text-xs text-sand-200 mt-1">For dedicated Hifz & daily practice</p>
+                        
+                        <div class="my-6">
+                            <span class="text-4xl font-extrabold text-gold-400">$90</span>
+                            <span class="text-xs text-sand-200">/ Month</span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-sand-100 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> <strong>5 Days</strong> per Week</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> 30 Mins per Session</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> Complete Daily Hifz Routine</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> Deep Tajweed Correction</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> Priority Schedule Slots</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20want%20to%20enroll%20in%20the%20Intensive%20Hifz%20Plan%20($90/mo)." 
+                       target="_blank" 
+                       class="w-full text-center py-3 rounded-xl bg-emerald-900 hover:bg-emerald-800 text-gold-400 font-bold text-sm border border-gold-500/30 transition-all">
+                        Enroll Intensive Plan
+                    </a>
                 </div>
 
             </div>
 
-            <!-- Footer Bottom Bar -->
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-4">
-                <p>© 2026 Al-Safwan Learning Academy (Hafiz Muhammad Safwan). All rights reserved.</p>
-                <div class="flex items-center gap-4">
-                    <span>Tajweed Rules</span>
-                    <span>•</span>
-                    <span>Hifz Quran</span>
-                    <span>•</span>
-                    <span>Chemistry & STEM</span>
+            <!-- Discount Banner -->
+            <div class="mt-12 bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-900 border border-gold-500/40 rounded-2xl p-6 text-center max-w-3xl mx-auto shadow-xl">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-left">
+                        <h4 class="font-bold text-white text-lg flex items-center gap-2">
+                            <i class="fa-solid fa-people-roof text-gold-400 text-xl"></i>
+                            20% Family & Sibling Discount
+                        </h4>
+                        <p class="text-xs text-sand-200 mt-1">Enrolling 2 or more children from the same family? Get an automatic 20% discount on total tuition.</p>
+                    </div>
+                    <button onclick="openModal()" class="whitespace-nowrap bg-gold-500 hover:bg-gold-400 text-emerald-950 font-extrabold text-xs px-5 py-3 rounded-xl transition-all">
+                        Claim Sibling Discount
+                    </button>
                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ACADEMY NAME PROFILES & RECOMMENDATIONS -->
+    <section id="academies" class="py-16 sm:py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-emerald-850 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-gold-500/20 rounded-full border border-gold-500/30">Official Branding & Identity</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-emerald-950 mt-3">Al-Safwan Academy Identities</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">Choose the official academy portal name that fits your reference when enrolling.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Option 1 -->
+                <div class="p-6 rounded-2xl bg-sand-50 border-2 border-gold-500/40 shadow-sm relative overflow-hidden">
+                    <span class="absolute top-3 right-3 text-xs bg-gold-500 text-emerald-950 font-bold px-2 py-0.5 rounded">Ranked #1</span>
+                    <i class="fa-solid fa-graduation-cap text-3xl text-emerald-850 mb-3"></i>
+                    <h3 class="text-xl font-bold text-emerald-950">Al-Safwan Learning Academy</h3>
+                    <p class="text-xs text-slate-600 mt-2">
+                        The core official identity representing online Quranic studies, Tajweed certification, and modern academic excellence.
+                    </p>
+                </div>
+
+                <!-- Option 2 -->
+                <div class="p-6 rounded-2xl bg-sand-50 border border-sand-200 shadow-sm">
+                    <i class="fa-solid fa-flask-vial text-3xl text-emerald-850 mb-3"></i>
+                    <h3 class="text-xl font-bold text-emerald-950">Safwan Quran & STEM Academy</h3>
+                    <p class="text-xs text-slate-600 mt-2">
+                        Highlights the unique dual identity of Hafiz Safwan (Master in Chemistry & BS Data Science Engineer) for scientific Quranic pedagogy.
+                    </p>
+                </div>
+
+                <!-- Option 3 -->
+                <div class="p-6 rounded-2xl bg-sand-50 border border-sand-200 shadow-sm">
+                    <i class="fa-solid fa-book-quran text-3xl text-emerald-850 mb-3"></i>
+                    <h3 class="text-xl font-bold text-emerald-950">TajweedUlSafwan Online Academy</h3>
+                    <p class="text-xs text-slate-600 mt-2">
+                        Dedicated specialized branch focusing strictly on advanced Tajweed phonetics, qirat rules, and makharij mastery.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-emerald-950 text-white border-t border-gold-500/30 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1 -->
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-gold-500 flex items-center justify-center text-emerald-950 font-bold text-xl">
+                            <i class="fa-solid fa-kaaba"></i>
+                        </div>
+                        <span class="font-extrabold text-xl text-white">Al-Safwan Online Academy</span>
+                    </div>
+                    <p class="text-xs text-sand-200 leading-relaxed max-w-md">
+                        Providing authentic 1-on-1 online Quran tuition globally with Tajweed precision and modern data science progress tracking under the leadership of Hafiz Muhammad Safwan.
+                    </p>
+                    <div class="flex items-center gap-3 text-gold-400">
+                        <a href="https://www.facebook.com/saffwan64" target="_blank" class="w-8 h-8 rounded-full bg-emerald-900 flex items-center justify-center hover:bg-gold-500 hover:text-emerald-950 transition-colors"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="https://www.instagram.com/m_safwan_64" target="_blank" class="w-8 h-8 rounded-full bg-emerald-900 flex items-center justify-center hover:bg-gold-500 hover:text-emerald-950 transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="https://www.tiktok.com/@hmsaffwan64" target="_blank" class="w-8 h-8 rounded-full bg-emerald-900 flex items-center justify-center hover:bg-gold-500 hover:text-emerald-950 transition-colors"><i class="fa-brands fa-tiktok text-sm"></i></a>
+                        <a href="https://wa.me/923093214855" target="_blank" class="w-8 h-8 rounded-full bg-emerald-900 flex items-center justify-center hover:bg-gold-500 hover:text-emerald-950 transition-colors"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-xs text-sand-200">
+                        <li><a href="#home" class="hover:text-gold-400 transition-colors">Home Portal</a></li>
+                        <li><a href="#tilawat" class="hover:text-gold-400 transition-colors">Surah Ad-Duhaa Recitation</a></li>
+                        <li><a href="#tilawat" class="hover:text-gold-400 transition-colors">Surah Al-A'raf Recitation</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition-colors">Tajweed & Hifz Courses</a></li>
+                        <li><a href="#pricing" class="hover:text-gold-400 transition-colors">Monthly Tuition Plans</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider mb-4">Contact Educator</h4>
+                    <ul class="space-y-3 text-xs text-sand-200">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-green-400 text-base"></i>
+                            <a href="https://wa.me/923093214855" target="_blank" class="hover:text-gold-400 font-mono">+92 309 3214855</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-user text-gold-400"></i>
+                            <span>Hafiz Muhammad Safwan</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-gold-400"></i>
+                            <span>M.Sc Chem | BS Data Science</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-emerald-900 text-center text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; 2026 Al-Safwan Learning Academy. All Rights Reserved.</p>
+                <p class="text-sand-200 font-quran text-sm">وَقُل رَّبِّ زِدْنِي عِلْمًا</p>
             </div>
         </div>
     </footer>
 
-    <!-- PERSISTENT FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20am%20visiting%20your%20website%20and%20want%20to%20inquire%20about%20classes." 
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/923093214855?text=Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20would%20like%20to%20enroll%20for%20Quran%20classes." 
        target="_blank" 
-       rel="noopener noreferrer"
-       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 pulse-wa group"
+       class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl border-2 border-white transition-all transform hover:scale-110 group" 
        aria-label="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
-        <!-- Tooltip on Hover -->
-        <span class="absolute right-16 bg-teal-950 text-white text-xs font-bold py-2 px-3 rounded-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition duration-200 pointer-events-none shadow-lg border border-gold-500/30">
-            Chat with Hafiz Safwan (+92 309 3214855)
+        <span class="absolute right-16 bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Chat Direct (+92 309 3214855)
         </span>
     </a>
 
-    <!-- SUCCESS MODAL POPUP (NO ALERT) -->
-    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden px-4">
-        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-gold-400 text-center space-y-4">
-            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <h3 class="text-xl font-extrabold text-teal-950">Trial Request Received!</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-                JazakAllah Khair! Your trial class request has been registered. You will now be redirected to WhatsApp to confirm your preferred class time with Hafiz Safwan.
-            </p>
-            <button id="close-modal-btn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl text-xs transition">
-                Continue to WhatsApp Chat <i class="fa-brands fa-whatsapp ml-1 text-sm"></i>
+    <!-- FREE TRIAL BOOKING MODAL -->
+    <div id="trialModal" class="fixed inset-0 z-50 hidden bg-emerald-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card-dark rounded-2xl max-w-md w-full p-6 sm:p-8 border border-gold-500/40 shadow-2xl relative text-white">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
             </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-gold-500 text-emerald-950 flex items-center justify-center text-xl font-bold mx-auto mb-2">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">Book Your 3-Day Free Trial</h3>
+                <p class="text-xs text-sand-200 mt-1">No payment required! Experience interactive 1-on-1 Tajweed learning.</p>
+            </div>
+
+            <form id="trialForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-gold-400 mb-1">Student / Parent Name</label>
+                    <input type="text" required placeholder="e.g. Brother Ahmed" class="w-full bg-emerald-900/80 border border-emerald-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-gold-400 mb-1">WhatsApp Number (with Country Code)</label>
+                    <input type="tel" required placeholder="e.g. +1 234 567 8900" class="w-full bg-emerald-900/80 border border-emerald-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-gold-400 mb-1">Course Interest</label>
+                    <select class="w-full bg-emerald-900/80 border border-emerald-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-gold-400">
+                        <option>Noorani Qaida (Beginner)</option>
+                        <option>Tajweed-ul-Quran Reading</option>
+                        <option>Hifz-ul-Quran (Memorization)</option>
+                        <option>Islamic Studies & Masnoon Duas</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-gold-400 mb-1">Preferred Timezone / Location</label>
+                    <input type="text" placeholder="e.g. USA (EST) / London UK" class="w-full bg-emerald-900/80 border border-emerald-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-gold-400">
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-emerald-950 font-extrabold py-3 rounded-xl shadow-lg text-sm transition-all mt-2">
+                    Submit Request via WhatsApp
+                </button>
+            </form>
         </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed top-5 right-5 z-50 hidden bg-emerald-900 text-white border border-gold-400 px-5 py-3 rounded-xl shadow-2xl text-xs flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-gold-400 text-lg"></i>
+        <span id="toastMessage">Redirecting to WhatsApp...</span>
     </div>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Mobile Navigation Drawer Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        }
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        function openModal() {
+            document.getElementById('trialModal').classList.remove('hidden');
+        }
 
-        // Close mobile drawer when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+        function closeModal() {
+            document.getElementById('trialModal').classList.add('hidden');
+        }
 
-        // Trial Booking Form Handling
-        const trialForm = document.getElementById('trial-form');
-        const successModal = document.getElementById('success-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-
-        trialForm.addEventListener('submit', (e) => {
+        function handleFormSubmit(e) {
             e.preventDefault();
-            
-            const phone = document.getElementById('form-phone').value;
-            const course = document.getElementById('form-course').value;
-            const notes = document.getElementById('form-notes').value;
+            const inputs = e.target.querySelectorAll('input, select');
+            const name = inputs[0].value;
+            const phone = inputs[1].value;
+            const course = inputs[2].value;
+            const timezone = inputs[3].value;
 
-            // Show Success Modal
-            successModal.classList.remove('hidden');
+            const text = `Assalamu%20Alaikum%20Hafiz%20Safwan,%20I%20would%20like%20to%20book%20a%203-Day%20Free%20Trial.%0A%0A*Name:*%20${encodeURIComponent(name)}%0A*WhatsApp:*%20${encodeURIComponent(phone)}%0A*Course:*%20${encodeURIComponent(course)}%0A*Timezone/City:*%20${encodeURIComponent(timezone)}`;
 
-            // Save redirect URL
-            const textMsg = encodeURIComponent(`Assalamu Alaikum Hafiz Safwan! I submitted a trial request for ${course}. My contact is ${phone}. ${notes ? 'Note: ' + notes : ''}`);
-            const waRedirectUrl = `https://wa.me/923093214855?text=${textMsg}`;
+            closeModal();
+            showToast('Opening WhatsApp to send your registration details...');
 
-            closeModalBtn.onclick = () => {
-                successModal.classList.add('hidden');
-                window.open(waRedirectUrl, '_blank');
-            };
-        });
+            setTimeout(() => {
+                window.open(`https://wa.me/923093214855?text=${text}`, '_blank');
+            }, 1200);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
     </script>
 </body>
 </html>
